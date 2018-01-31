@@ -2,13 +2,13 @@
 import subprocess
 import os
 uptime = subprocess.check_output("w",shell=True)
-uptime_results = uptime.decode('utf-8').split(',');
+uptime_results = uptime.decode('utf-8').split(',')
 if len(uptime_results) > 0:
     #print(len(uptime_results))
     for uptime_element in uptime_results:
         if 'up' in uptime_element:
             times = uptime_element.split('up')
-            time = times[len(times)-1];
+            time = times[len(times)-1]
             #print(time.strip())
             if "days" in time.strip():
                 days = time.strip().split("days")
